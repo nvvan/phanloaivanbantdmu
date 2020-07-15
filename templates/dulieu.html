@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Phân tích dữ liệu</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../static/myapp/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/myapp/results.css">
+		<script src="../static/myapp/jquery-2.0.3.min.js"></script>
+		
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(drawChart);
+		google.charts.setOnLoadCallback(drawChart1);
+
+		  function drawChart() {
+			var data = google.visualization.arrayToDataTable([
+			  ['Task', 'Dữ liệu huấn luyện'],
+			  ['Chính trị Xã hội',     5219],
+			  ['Đời sống',      3159],
+			  ['Khoa học',  1820],
+			  ['Kinh doanh', 2552],
+			  ['Pháp luật',    3868],
+			  ['Sức khỏe', 3384],
+			  ['Thế giới', 2898],
+			  ['Thể thao',    5298],
+			  ['Văn hóa',    3080],
+			  ['Vi tính', 2481]			  
+			]);
+
+			var data2 = google.visualization.arrayToDataTable([
+			  ['Task', 'Dữ liệu kiểm tra'],
+			  ['Chính trị Xã hội',     7567],
+			  ['Đời sống',      2036],
+			  ['Khoa học',  2096],
+			  ['Kinh doanh', 5276],
+			  ['Pháp luật',    3788],
+			  ['Sức khỏe', 5417],
+			  ['Thế giới', 6716],
+			  ['Thể thao',    6667],
+			  ['Văn hóa',    6250],
+			  ['Vi tính', 4560]			  
+			]);
+
+
+			var options = {
+			  title: 'DỮ LIỆU TẬP HUẤN LUYỆN',
+			  is3D: true,
+			};
+
+			var options2 = {
+			  title: 'DỮ LIỆU TẬP KIỂM TRA',
+			  is3D: true,
+			};
+			
+			var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+			chart.draw(data, options);
+			
+			var chart2 = new google.visualization.PieChart(document.getElementById('piechart_3d2'));
+			chart2.draw(data2, options2);
+			
+		  }
+			 
+    </script>
+		
+		<style>
+			ul {
+			  list-style-type: none;
+			  margin: 0;
+			  padding: 0;
+			  overflow: hidden;
+			  background-color:#23a9bb;
+			  align: center;
+			}
+
+			li {
+				  float:left;
+				  margin-right: 10px;
+				  margin-left: 45px;
+			}
+
+			li a {
+			  display: inline-block;
+			  color: #124046;
+			  font-size:20px;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+			  float: none;
+
+			}
+
+			li a:hover {
+			  background-color: #3f85c1;
+			}
+			 body {
+            font-family: 'Fira Sans', sans-serif;
+            background-image: url("../static/bg.png");
+           
+        }
+		</style>
+	
+		<nav class="navbar navbar-dark bg-primary justify-content-center">
+			  <div class = "img-container2"> <img style='height: 100%; width: 100%; object-fit: contain' src="../static/banner2.jpg" /></div>
+		</nav>
+		<ul>
+			<li><a href="/"><strong>Nhập văn bản dự đoán</strong></a></li>
+			<li><a href="/dudoanfile"><strong>Nhập file dự đoán</strong></a></li>
+			<li><a href="/dulieu"><strong>Phân tích dữ liệu</strong></a></li>
+			<li><a href="/phantichketqua"><strong>Phân tích kết quả</strong></a></li>
+			<li><a href="/video"><strong>Video Demo</strong></a></li>
+		</ul>
+    </head>
+
+    <body>
+        <div class="container" >
+         
+            <div class="col-xs-8 col-xs-offset-2">
+                <h2 class="text-muted" color="red" align="center"><strong>THÔNG TIN DỮ LIỆU</strong></h2>
+                <p color="blue" align="center">&nbsp;</p>	
+            </div>
+         <table width="100%" border="0" align="left">
+				<tr>
+			 
+					<td><div id="piechart_3d" style="width: 600px; height: 400px;"></div></td>
+				    <td><div id="piechart_3d2" style="width: 600px; height: 400px;"></div></td>
+				</tr>
+		</table>
+            
+
+  
+    </div>
+           <p width="20px" color="blue" align="center">&nbsp;</p>
+           <p color="blue" align="center">&nbsp;</p>
+           <p color="blue" align="center">&nbsp;</p>
+
+  
+
+
+    </body>
+</html>

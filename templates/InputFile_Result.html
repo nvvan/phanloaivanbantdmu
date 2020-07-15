@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Kết quả dự đoán</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../static/myapp/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/myapp/results.css">
+		     <script src="../static/myapp/jquery-2.0.3.min.js"></script>
+        <link rel="stylesheet" href="../static/myapp/font-awesome-4.7.0/css/font-awesome.css">
+       
+		<style>
+			ul {
+			  list-style-type: none;
+			  margin: 0;
+			  padding: 0;
+			  overflow: hidden;
+			  background-color:#23a9bb;
+			  align: center;
+			}
+
+			li {
+				  float:left;
+				   margin-right: 10px;
+				  margin-left: 45px;
+			}
+
+			li a {
+			  display: inline-block;
+			  color: #124046;
+			  font-size:20px;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+			  float: none;
+
+			}
+
+			li a:hover {
+			  background-color: #3f85c1;
+			}
+			body {
+            font-family: 'Fira Sans', sans-serif;
+            background-image: url("../static/bg.png");
+           }
+		</style>
+	
+		<nav class="navbar navbar-dark bg-primary justify-content-center">
+			  <div class = "img-container2"> <img style='height: 100%; width: 100%; object-fit: contain' src="../static/banner2.jpg" /></div>
+		</nav>
+		<ul>
+		<li><a href="/"><strong>Nhập văn bản dự đoán</strong></a></li>
+		<li><a href="/dudoanfile"><strong>Nhập file dự đoán</strong></a></li>
+		<li><a href="/dulieu"><strong>Phân tích dữ liệu</strong></a></li>
+		<li><a href="/phantichketqua"><strong>Phân tích kết quả</strong></a></li>
+		<li><a href="/video"><strong>Video Demo</strong></a></li>
+		</ul>
+</head>
+
+<body>
+<div>
+    <div class="col-xs-8 col-xs-offset-2">
+                <h2 class="text-muted" color="blue" align="center"><strong>KẾT QUẢ DỰ ĐOÁN FILE</strong></h2>
+                 <form action="/dudoanfile" method="GET">
+						<element><textarea name="query" id ="query" rows="10" cols="120" wrap="soft"  style="margin: 0px; width: 900px; height: 300px;">{{data[0].query}}</textarea><element/>		
+						<button  class="btn btn-primary" value="Dự đoán" type="submit">Thử lại</button>
+                </form>
+				
+				<h3 class="text-muted" style="color:#333" align="center"><strong>Nhãn hệ thống dự đoán: {{data[0].label}}</strong></h3>
+				<p style="color:red" align="center">&nbsp;</p>
+				
+				
+    </div>
+</div>
+</body>
+</html>
